@@ -7,10 +7,10 @@ import {
 import { CreateUserDto } from './dto/create-user.dto';
 import { InjectModel } from '@nestjs/sequelize';
 import { User } from './models/user.model';
-import { RolesService } from 'src/roles/roles.service';
 import { Http2ServerRequest } from 'http2';
 import { AddRoleDto } from './dto/add-role.dto';
 import { ActivateUserDto } from './dto/activate-user.dto';
+import { RolesService } from '../roles/roles.service';
 
 @Injectable()
 export class UsersService {

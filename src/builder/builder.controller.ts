@@ -9,9 +9,9 @@ import {
 } from '@nestjs/common';
 import { BuilderService } from './builder.service';
 import { CreateBuilderDto } from './dto/create-builder.dto';
-import { UpdateBuilderDto } from 'src/builder/dto/update-builder.dto';
 import { Builder } from './models/builder.model';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { UpdateBuilderDto } from './dto/update-builder.dto';
 
 @ApiTags('Quruvchilar')
 @Controller('builder')

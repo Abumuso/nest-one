@@ -16,10 +16,10 @@ import { User } from './models/user.model';
 import { AddRoleDto } from './dto/add-role.dto';
 import { ActivateUserDto } from './dto/activate-user.dto';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/guard/jwt-auth.guard';
-import { UserSelfGuard } from 'src/guard/user-self.guard';
-import { Roles } from 'src/decorators/roles-auth.decorators';
-import { RolesGuard } from 'src/guard/roles.guard';
+import { JwtAuthGuard } from '../guard/jwt-auth.guard';
+import { UserSelfGuard } from '../guard/user-self.guard';
+import { RolesGuard } from '../guard/roles.guard';
+import { Roles } from '../decorators/roles-auth.decorators';
 
 @ApiTags('Foydalanuvchilar')
 @Controller('users')

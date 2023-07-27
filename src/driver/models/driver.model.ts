@@ -1,5 +1,5 @@
 import { Column, DataType, HasMany, Model, Table } from 'sequelize-typescript';
-import { Machine_driver } from 'src/machine_driver/models/machine_driver.model';
+import { Machine_driver } from '../../machine_driver/models/machine_driver.model';
 
 interface DriverAttr {
   first_name: string;

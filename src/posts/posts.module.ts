@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { PostsService } from './posts.service';
 import { PostsController } from './posts.controller';
-import { User } from 'src/users/models/user.model';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { FilesModule } from 'src/files/files.module';
 import { Post } from './models/post.model';
+import { User } from '../users/models/user.model';
+import { FilesModule } from '../files/files.module';
 
 @Module({
   imports: [SequelizeModule.forFeature([User, Post]), FilesModule],
