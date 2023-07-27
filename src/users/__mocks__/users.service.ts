@@ -4,7 +4,7 @@ export const UsersService = jest.fn().mockReturnValue({
   getOneUser: jest.fn().mockResolvedValue(userStub()),
   getAllUsers: jest.fn().mockResolvedValue([userStub()]),
   createUser: jest.fn().mockResolvedValue(userStub()),
-  deleteUser: jest
+  deleteUserById: jest
     .fn()
-    .mockResolvedValue({ mesage: "Foydalanuvchi o'chirildi" }),
+    .mockResolvedValue({ message: "Foydalanuvchi o'chirildi" }),
 });

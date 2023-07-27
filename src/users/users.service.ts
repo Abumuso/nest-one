@@ -26,8 +26,8 @@ export class UsersService {
     if (!role) {
       throw new BadRequestException('Role not found');
     }
-    await newUser.$set('roles', [role.id]);
-    await newUser.save();
+    // await newUser.$set('roles', [role.id]);
+    // await newUser.save();
     newUser.roles = [role];
 
     return newUser;
@@ -54,11 +54,11 @@ export class UsersService {
     return user;
   }
 
-  async deleteUser(id: number) {
+  async deleteUserById(id: number): Promise<object> {
     const user = await this.userRepository.destroy({ where: { id } });
-    if (!user) {
-      throw new HttpException('Foydalanuvchi topilmadi', HttpStatus.NOT_FOUND);
-    }
+    // if (!user) {
+    //   throw new HttpException('Foydalanuvchi topilmadi', HttpStatus.NOT_FOUND);
+    // }
     return { message: "Foydalanuvchi o'chirildi" };
   }
 

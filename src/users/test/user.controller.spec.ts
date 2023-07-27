@@ -47,4 +47,50 @@ describe('Users controller', () => {
       });
     });
   });
+
+  describe('getOneUser', () => {
+    describe('when getOneUser is called', () => {
+      let user: User;
+      beforeEach(async () => {
+        user = await usersController.getOneUser(userStub().id);
+      });
+      it('then it should call usersService', () => {
+        expect(usersService.getOneUser).toBeCalledWith(userStub().id);
+      });
+      it('then it should return user', () => {
+        expect(user).toEqual(userStub());
+      });
+    });
+  });
+
+  describe('getAllUsers', () => {
+    describe('when getAllUsers is called', () => {
+      let users: User[];
+      beforeEach(async () => {
+        users = await usersController.getAllUsers();
+      });
+      it('then it should call usersService', () => {
+        expect(usersService.getAllUsers).toBeCalled();
+      });
+      it('then it should return users', () => {
+        expect(users).toEqual([userStub()]);
+      });
+    });
+  });
+
+  describe('deleteUser', () => {
+    describe('when deleteUser is called', () => {
+      let res: Object;
+      beforeEach(async () => {
+        res = await usersController.deleteUserById(userStub().id);
+        console.log(Object);
+      });
+      it('then it should call usersService', () => {
+        expect(usersService.deleteUserById).toBeCalledWith(userStub().id);
+      });
+      it('then it should return user', () => {
+        expect(res).toEqual({message:"Foydalanuvchi o'chirildi"});
+      });
+    });
+  });
 });

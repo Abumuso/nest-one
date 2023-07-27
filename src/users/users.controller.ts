@@ -8,6 +8,7 @@ import {
   Delete,
   HttpCode,
   UseGuards,
+  ParseIntPipe,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -46,6 +47,12 @@ export class UsersController {
   @Get(':id')
   getOneUser(@Param('id') id: number): Promise<User> {
     return this.usersService.getOneUser(id);
+  }
+
+  @ApiOperation({ summary: "Foydalanuvchilarni o'chirish" })
+  @Delete(':id')
+  async deleteUserById(@Param('id', ParseIntPipe) id: number): Promise<object> {
+    return this.usersService.deleteUserById(+id);
   }
 
   @HttpCode(200)
