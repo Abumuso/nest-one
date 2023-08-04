@@ -61,6 +61,7 @@ describe('Users service', () => {
         newUser = await usersService.createUser(createUsersDto);
         console.log(newUser);
       });
+
       it('should be create new user', async () => {
         expect(newUser).toMatchObject({
           ...userStub(),

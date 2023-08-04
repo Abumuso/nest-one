@@ -48,7 +48,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
         Post,
       ],
       autoLoadModels: true,
-      logging: true,
+      logging: false,
     }),
     CompanyModule,
     MachineModule,

@@ -89,7 +89,7 @@ describe('Users controller', () => {
         expect(usersService.deleteUserById).toBeCalledWith(userStub().id);
       });
       it('then it should return user', () => {
-        expect(res).toEqual({message:"Foydalanuvchi o'chirildi"});
+        expect(res).toEqual({ message: "Foydalanuvchi o'chirildi" });
       });
     });
   });
